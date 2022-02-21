@@ -43,6 +43,7 @@ dependencies:
   get: ^4.6.1
   path_provider: ^2.0.9
   sembast: ^3.1.2
+  dart_strapi: ^2.0.0
 
 dev_dependencies:
   flutter_test:
@@ -56,6 +57,7 @@ dev_dependencies:
   flutter_lints: ^1.0.0
   build_runner: ^2.1.7
   json_serializable: ^6.1.4
+  mockito: ^5.1.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
