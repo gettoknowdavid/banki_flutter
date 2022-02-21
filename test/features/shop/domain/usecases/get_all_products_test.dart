@@ -8,7 +8,7 @@ import 'package:banki_flutter/features/shop/domain/entities/product_data.dart';
 import 'package:banki_flutter/features/shop/domain/entities/strapi_image.dart';
 import 'package:banki_flutter/features/shop/domain/entities/strapi_image_attributes.dart';
 import 'package:banki_flutter/features/shop/domain/entities/strapi_image_data.dart';
-import 'package:banki_flutter/features/shop/domain/entities/strapi_images.dart';
+import 'package:banki_flutter/features/shop/domain/entities/gallery.dart';
 import 'package:banki_flutter/features/shop/domain/repositories/shop_repository.dart';
 import 'package:banki_flutter/features/shop/domain/usecases/get_all_products.dart';
 import 'package:dartz/dartz.dart';
