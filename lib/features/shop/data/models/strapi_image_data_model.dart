@@ -9,8 +9,8 @@ class StrapiImageDataModel extends StrapiImageData {
 
   factory StrapiImageDataModel.fromJson(Map<String, dynamic> json) {
     return StrapiImageDataModel(
-      id: (json['id'])?.toInt(),
-      attributes: json['attributes'],
+      id: int.parse(json['id']),
+      attributes: StrapiImageAttributesModel.fromJson(json['attributes']),
     );
   }
 
