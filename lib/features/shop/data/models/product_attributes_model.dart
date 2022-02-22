@@ -28,8 +28,8 @@ class ProductAttributesModel extends ProductAttributes {
     return ProductAttributesModel(
       name: json['name'],
       description: json['description'],
-      price: json['price'],
-      rating: json['rating'],
+      price: (json['price']).toDouble(),
+      rating: (json['rating']).toDouble(),
       author: json['author'],
       category: CategoryModel.fromJson(json['category']),
       featuredImage: StrapiImageModel.fromJson(json['featuredImage']),

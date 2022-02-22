@@ -19,8 +19,7 @@ import 'package:banki_flutter/features/shop/domain/entities/gallery.dart';
 
 const productAttributesModel = ProductAttributesModel(
   name: "Womb Chair",
-  description:
-      "Spectacular and exquisite are the true definitions of this timeless Womb Chair by Knoll Saarinen.",
+  description: "description",
   price: 499999,
   rating: 4,
   author: "Knoll Saarinen",
@@ -32,34 +31,22 @@ const productAttributesModel = ProductAttributesModel(
   ),
   featuredImage: StrapiImageModel(
     data: StrapiImageDataModel(
-      attributes: StrapiImageAttributesModel(
-        url:
-            "https://res.cloudinary.com/tintday/image/upload/v1643227074/Knoll_Saarinen_Womb_Chair_G03_watermarked_2k_0a3438e908.png",
-      ),
+      attributes: StrapiImageAttributesModel(url: "url"),
     ),
   ),
   gallery: GalleryModel(
-    data: [
+    data: <StrapiImageDataModel>[
       StrapiImageDataModel(
         id: 42,
-        attributes: StrapiImageAttributesModel(
-          url:
-              "https://res.cloudinary.com/tintday/image/upload/v1643227074/Knoll_Saarinen_Womb_Chair_G03_watermarked_2k_0a3438e908.png",
-        ),
+        attributes: StrapiImageAttributesModel(url: "url"),
       ),
       StrapiImageDataModel(
         id: 46,
-        attributes: StrapiImageAttributesModel(
-          url:
-              "https://res.cloudinary.com/tintday/image/upload/v1643227074/Knoll_Saarinen_Womb_Chair_G12_watermarked_2k_978bb58874.png",
-        ),
+        attributes: StrapiImageAttributesModel(url: "url"),
       ),
       StrapiImageDataModel(
         id: 44,
-        attributes: StrapiImageAttributesModel(
-          url:
-              "https://res.cloudinary.com/tintday/image/upload/v1643227074/Knoll_Saarinen_Womb_Chair_G03_watermarked_2k_0a3438e908.png",
-        ),
+        attributes: StrapiImageAttributesModel(url: "url"),
       ),
     ],
   ),

@@ -10,7 +10,7 @@ class ProductDataModel extends ProductData {
   factory ProductDataModel.fromJson(Map<String, dynamic> json) {
     return ProductDataModel(
       id: json['id'],
-      attributes: json['attributes'],
+      attributes: ProductAttributesModel.fromJson(json['attributes']),
     );
   }
 

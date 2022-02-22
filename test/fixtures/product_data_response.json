@@ -1,0 +1,47 @@
+{
+    "id": 1,
+    "attributes": {
+        "name": "Womb Chair",
+        "description": "description",
+        "price": 499999,
+        "rating": 4,
+        "author": "Knoll Saarinen",
+        "category": {
+            "data": {
+                "id": "3",
+                "attributes": {
+                    "name": "Chairs"
+                }
+            }
+        },
+        "featuredImage": {
+            "data": {
+                "attributes": {
+                    "url": "url"
+                }
+            }
+        },
+        "gallery": {
+            "data": [
+                {
+                    "id": "42",
+                    "attributes": {
+                        "url": "url"
+                    }
+                },
+                {
+                    "id": "46",
+                    "attributes": {
+                        "url": "url"
+                    }
+                },
+                {
+                    "id": "44",
+                    "attributes": {
+                        "url": "url"
+                    }
+                }
+            ]
+        }
+    }
+}
