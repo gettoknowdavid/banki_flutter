@@ -9,8 +9,8 @@ class CategoryDataModel extends CategoryData {
 
   factory CategoryDataModel.fromJson(Map<String, dynamic> json) {
     return CategoryDataModel(
-      id: (json['id']).toInt(),
-      attributes: json['attributes'],
+      id: int.parse(json['id']),
+      attributes: CategoryAttributesModel.fromJson(json['attributes']),
     );
   }
 

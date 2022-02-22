@@ -1,7 +1,7 @@
 import 'package:banki_flutter/features/shop/domain/entities/category_attributes.dart';
 
 class CategoryAttributesModel extends CategoryAttributes {
-  const CategoryAttributesModel({required String name}) : super(name: name);
+  const CategoryAttributesModel({required String? name}) : super(name: name);
 
   factory CategoryAttributesModel.fromJson(Map<String, dynamic> json) {
     return CategoryAttributesModel(
