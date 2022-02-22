@@ -3,21 +3,22 @@ import 'package:banki_flutter/features/shop/domain/entities/strapi_image_data.da
 
 class StrapiImageDataModel extends StrapiImageData {
   const StrapiImageDataModel({
-    int? id,
+    required int id,
     required StrapiImageAttributesModel attributes,
   }) : super(id: id, attributes: attributes);
 
   factory StrapiImageDataModel.fromJson(Map<String, dynamic> json) {
     return StrapiImageDataModel(
-      id: json['id'] != null ? int.parse(json['id']) : null,
+      id: json['id'],
       attributes: StrapiImageAttributesModel.fromJson(json['attributes']),
     );
   }
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> json = <String, dynamic>{};
-    json['id'] = id;
-    json['attributes'] = attributes;
+    final model = StrapiImageAttributesModel(url: attributes.url);
+    json['id'] = id.toString();
+    json['attributes'] = model.toJson();
     return json;
   }
 }

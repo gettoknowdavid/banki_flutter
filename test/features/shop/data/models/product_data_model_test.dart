@@ -33,5 +33,15 @@ void main() {
         expect(result, productDataModel);
       },
     );
+
+    test(
+      'should return a JSON map containing the proper data',
+      () async {
+        final result = productDataModel.toJson();
+        final jsonString = fixture('product_data_response.json');
+        final expectedJson = json.decode(jsonString);
+        expect(result, expectedJson);
+      },
+    );
   });
 }

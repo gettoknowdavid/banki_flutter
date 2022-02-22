@@ -1,3 +1,4 @@
+import 'package:banki_flutter/features/shop/data/models/category_attributes_model.dart';
 import 'package:banki_flutter/features/shop/data/models/category_data_model.dart';
 import 'package:banki_flutter/features/shop/domain/entities/category.dart';
 
@@ -10,7 +11,11 @@ class CategoryModel extends Category {
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> json = <String, dynamic>{};
-    json['data'] = data;
+    final model = CategoryDataModel(
+      id: data.id,
+      attributes: CategoryAttributesModel(name: data.attributes.name),
+    );
+    json['data'] = model.toJson();
     return json;
   }
 }

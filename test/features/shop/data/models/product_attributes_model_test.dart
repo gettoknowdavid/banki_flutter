@@ -15,7 +15,7 @@ void main() {
     },
   );
 
-    group('fromJson', () {
+  group('fromJson', () {
     test(
       'should return a valid model when JSON is passed',
       () async {
@@ -26,6 +26,16 @@ void main() {
         final result = ProductAttributesModel.fromJson(jsonMap);
 
         expect(result, productAttributesModel);
+      },
+    );
+
+    test(
+      'should return a JSON map containing the proper data',
+      () async {
+        final result = productAttributesModel.toJson();
+        final jsonString = fixture('product_attributes_response.json');
+        final expectedJson = json.decode(jsonString);
+        expect(result, expectedJson);
       },
     );
   });

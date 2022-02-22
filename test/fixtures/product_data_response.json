@@ -16,6 +16,7 @@
         },
         "featuredImage": {
             "data": {
+                "id": "42",
                 "attributes": {
                     "url": "url"
                 }

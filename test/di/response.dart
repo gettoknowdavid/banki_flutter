@@ -31,6 +31,7 @@ const productAttributesModel = ProductAttributesModel(
   ),
   featuredImage: StrapiImageModel(
     data: StrapiImageDataModel(
+      id: 42,
       attributes: StrapiImageAttributesModel(url: "url"),
     ),
   ),
@@ -71,6 +72,7 @@ const List<Product> allTestProducts = <Product>[
         ),
         featuredImage: StrapiImage(
           data: StrapiImageData(
+            id: 42,
             attributes: StrapiImageAttributes(
               url:
                   "https://res.cloudinary.com/tintday/image/upload/v1643227074/Knoll_Saarinen_Womb_Chair_G03_watermarked_2k_0a3438e908.png",

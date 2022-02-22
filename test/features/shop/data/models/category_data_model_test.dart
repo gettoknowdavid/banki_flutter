@@ -36,5 +36,14 @@ void main() {
         expect(result, categoryDataModel);
       },
     );
+
+    test(
+      'should return a JSON map containing the proper data',
+      () async {
+        final result = categoryDataModel.toJson();
+
+        expect(result, {"id": "3", "attributes": {"name": "Chairs"}});
+      },
+    );
   });
 }

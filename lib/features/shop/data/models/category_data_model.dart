@@ -16,8 +16,9 @@ class CategoryDataModel extends CategoryData {
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> json = <String, dynamic>{};
-    json['id'] = id;
-    json['attributes'] = attributes;
+    final attributesModel = CategoryAttributesModel(name: attributes.name);
+    json['id'] = id.toString();
+    json['attributes'] = attributesModel.toJson();
     return json;
   }
 }

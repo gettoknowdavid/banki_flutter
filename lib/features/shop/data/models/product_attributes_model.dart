@@ -1,5 +1,9 @@
+import 'package:banki_flutter/features/shop/data/models/category_attributes_model.dart';
+import 'package:banki_flutter/features/shop/data/models/category_data_model.dart';
 import 'package:banki_flutter/features/shop/data/models/category_model.dart';
 import 'package:banki_flutter/features/shop/data/models/gallery_model.dart';
+import 'package:banki_flutter/features/shop/data/models/strapi_image_attributes_model.dart';
+import 'package:banki_flutter/features/shop/data/models/strapi_image_data_model.dart';
 import 'package:banki_flutter/features/shop/data/models/strapi_image_model.dart';
 import 'package:banki_flutter/features/shop/domain/entities/product_attributes.dart';
 
@@ -42,12 +46,35 @@ class ProductAttributesModel extends ProductAttributes {
 
     json['name'] = name;
     json['description'] = description;
-    json['price'] = price;
-    json['rating'] = rating;
+    json['price'] = price.toInt();
+    json['rating'] = rating.toInt();
     json['author'] = author;
-    json['category'] = category;
-    json['featuredImage'] = featuredImage;
-    json['gallery'] = gallery;
+    json['category'] = CategoryModel(
+      data: CategoryDataModel(
+        id: category.data.id,
+        attributes: CategoryAttributesModel(
+          name: category.data.attributes.name,
+        ),
+      ),
+    ).toJson();
+    json['featuredImage'] = StrapiImageModel(
+      data: StrapiImageDataModel(
+        id: featuredImage.data.id,
+        attributes: StrapiImageAttributesModel(
+          url: featuredImage.data.attributes.url,
+        ),
+      ),
+    ).toJson();
+    json['gallery'] = GalleryModel(
+      data: gallery.data
+          .map(
+            (e) => StrapiImageDataModel(
+              id: e.id,
+              attributes: StrapiImageAttributesModel(url: e.attributes.url),
+            ),
+          )
+          .toList(),
+    ).toJson();
     return json;
   }
 }

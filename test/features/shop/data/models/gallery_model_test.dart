@@ -38,5 +38,21 @@ void main() {
         expect(result, galleryModel);
       },
     );
+
+    test(
+      'should return a JSON map containing the proper data',
+      () async {
+        final result = galleryModel.toJson();
+
+        expect(result, {
+          "data": [
+            {
+              "id": "43",
+              "attributes": {"url": "url"}
+            }
+          ]
+        });
+      },
+    );
   });
 }

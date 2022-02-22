@@ -2,8 +2,8 @@ import 'package:banki_flutter/features/shop/domain/entities/strapi_image_attribu
 import 'package:equatable/equatable.dart';
 
 class StrapiImageData extends Equatable {
-  const StrapiImageData({this.id, required this.attributes});
-  final int? id;
+  const StrapiImageData({required this.id, required this.attributes});
+  final int id;
   final StrapiImageAttributes attributes;
 
   @override

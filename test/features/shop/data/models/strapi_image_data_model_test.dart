@@ -36,5 +36,14 @@ void main() {
         expect(result, strapiImageDataModel);
       },
     );
+
+    test(
+      'should return a JSON map containing the proper data',
+      () async {
+        final result = strapiImageDataModel.toJson();
+
+        expect(result, {"id": "3", "attributes": {"url": "url"}});
+      },
+    );
   });
 }
