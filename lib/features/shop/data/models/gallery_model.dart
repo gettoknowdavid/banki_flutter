@@ -1,6 +1,5 @@
 import 'package:banki_flutter/features/shop/data/models/strapi_image_data_model.dart';
 import 'package:banki_flutter/features/shop/domain/entities/gallery.dart';
-import 'package:banki_flutter/features/shop/domain/entities/strapi_image_data.dart';
 
 class GalleryModel extends Gallery {
   const GalleryModel({
@@ -8,7 +7,11 @@ class GalleryModel extends Gallery {
   }) : super(data: data);
 
   factory GalleryModel.fromJson(Map<String, dynamic> json) {
-    return GalleryModel(data: json['data']);
+    return GalleryModel(
+      data: List<StrapiImageDataModel>.from(json['data']
+          .map((e) => StrapiImageDataModel.fromJson(e))
+          .toList()),
+    );
   }
 
   Map<String, dynamic> toJson() {
