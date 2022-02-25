@@ -13,13 +13,15 @@ import 'package:banki_flutter/features/shop/data/models/products_model.dart';
 import 'package:banki_flutter/features/shop/domain/entities/category.dart';
 import 'package:banki_flutter/features/shop/domain/entities/category_attributes.dart';
 import 'package:banki_flutter/features/shop/domain/entities/category_data.dart';
-import 'package:banki_flutter/features/shop/domain/entities/product.dart';
 import 'package:banki_flutter/features/shop/domain/entities/product_attributes.dart';
 import 'package:banki_flutter/features/shop/domain/entities/gallery.dart';
 import 'package:banki_flutter/features/shop/domain/entities/product_datum.dart';
 import 'package:banki_flutter/features/shop/domain/entities/product_image.dart';
 import 'package:banki_flutter/features/shop/domain/entities/product_image_attributes.dart';
 import 'package:banki_flutter/features/shop/domain/entities/product_image_data.dart';
+import 'package:banki_flutter/features/shop/domain/entities/product_response.dart';
+import 'package:banki_flutter/features/shop/domain/entities/product_response_data.dart';
+import 'package:banki_flutter/features/shop/domain/entities/products.dart';
 
 const tResponseModel = ProductResponseModel(
   data: ProductResponseDataModel(
@@ -67,48 +69,52 @@ const productAttributesModel = ProductAttributesModel(
   ),
 );
 
-const List<Product> allTestProducts = <Product>[
-  Product(
-    data: ProductDatum(
-      id: "1",
-      attributes: ProductAttributes(
-        name: "Womb Chair",
-        description:
-            "Spectacular and exquisite are the true definitions of this timeless Womb Chair by Knoll Saarinen.",
-        price: 499999,
-        rating: 4,
-        author: "Knoll Saarinen",
-        category: Category(
-          data: CategoryData(
-            id: "3",
-            attributes: CategoryAttributes(name: 'Chairs'),
-          ),
+const tResponse = ProductResponse(
+  data: ProductResponseData(
+    products: Products(data: allTestProducts),
+  ),
+);
+
+const List<ProductDatum> allTestProducts = <ProductDatum>[
+  ProductDatum(
+    id: "1",
+    attributes: ProductAttributes(
+      name: "Womb Chair",
+      description:
+          "Spectacular and exquisite are the true definitions of this timeless Womb Chair by Knoll Saarinen.",
+      price: 499999,
+      rating: 4,
+      author: "Knoll Saarinen",
+      category: Category(
+        data: CategoryData(
+          id: "3",
+          attributes: CategoryAttributes(name: 'Chairs'),
         ),
-        featuredImage: ProductImage(
-          data: ProductImageData(
+      ),
+      featuredImage: ProductImage(
+        data: ProductImageData(
+          id: "42",
+          attributes: ProductImageAttributes(url: "url"),
+        ),
+      ),
+      gallery: Gallery(
+        data: [
+          ProductImageData(
             id: "42",
             attributes: ProductImageAttributes(url: "url"),
           ),
-        ),
-        gallery: Gallery(
-          data: [
-            ProductImageData(
-              id: "42",
-              attributes: ProductImageAttributes(url: "url"),
-            ),
-            ProductImageData(
-              id: "46",
-              attributes: ProductImageAttributes(url: "url"),
-            ),
-            ProductImageData(
-              id: "44",
-              attributes: ProductImageAttributes(url: "url"),
-            ),
-          ],
-        ),
+          ProductImageData(
+            id: "46",
+            attributes: ProductImageAttributes(url: "url"),
+          ),
+          ProductImageData(
+            id: "44",
+            attributes: ProductImageAttributes(url: "url"),
+          ),
+        ],
       ),
     ),
-  ),
+  )
 ];
 
 // const List<ProductModel> allTestModels = <ProductModel>[

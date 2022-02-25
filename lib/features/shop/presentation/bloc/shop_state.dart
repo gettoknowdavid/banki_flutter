@@ -13,7 +13,7 @@ class ShopLoadInProgress extends ShopState {}
 
 class ShopLoadSuccess extends ShopState {
   const ShopLoadSuccess({required this.model});
-  final ProductResponseModel model;
+  final ProductResponse model;
 
   @override
   List<Object> get props => [model];
