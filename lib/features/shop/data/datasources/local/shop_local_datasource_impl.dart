@@ -4,8 +4,10 @@ import 'package:banki_flutter/common/app_constants.dart';
 import 'package:banki_flutter/core/error/exceptions.dart';
 import 'package:banki_flutter/features/shop/data/datasources/local/shop_local_datasource.dart';
 import 'package:banki_flutter/features/shop/data/models/product_response_model.dart';
+import 'package:injectable/injectable.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+@LazySingleton(as: ShopLocalDataSource)
 class ShopLocalDataSourceImpl implements ShopLocalDataSource {
   ShopLocalDataSourceImpl({required this.sharedPreferences});
   final SharedPreferences sharedPreferences;
