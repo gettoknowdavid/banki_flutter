@@ -6,7 +6,9 @@ import 'package:banki_flutter/core/error/failure.dart';
 import 'package:banki_flutter/features/shop/domain/entities/product_response.dart';
 import 'package:banki_flutter/features/shop/domain/repositories/shop_repository.dart';
 import 'package:dartz/dartz.dart';
+import 'package:injectable/injectable.dart';
 
+@LazySingleton(as: ShopRepository)
 class ShopRepositoryImpl implements ShopRepository {
   ShopRepositoryImpl({
     required this.remote,
