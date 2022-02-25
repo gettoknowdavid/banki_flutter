@@ -5,10 +5,12 @@ import 'package:banki_flutter/features/shop/domain/entities/product_response.dar
 import 'package:banki_flutter/features/shop/domain/usecases/get_all_products.dart';
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
+import 'package:injectable/injectable.dart';
 
 part 'shop_event.dart';
 part 'shop_state.dart';
 
+@injectable
 class ShopBloc extends Bloc<ShopEvent, ShopState> {
   ShopBloc({required this.getAllProducts}) : super(ShopInitial()) {
     on<ShopProductsGet>((event, emit) async {
