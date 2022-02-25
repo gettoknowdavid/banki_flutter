@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class SamplePage extends StatefulWidget {
-  const SamplePage({Key? key}) : super(key: key);
+class ShopPage extends StatefulWidget {
+  const ShopPage({Key? key}) : super(key: key);
 
   @override
-  createState() => _SamplePage();
+  createState() => _ShopPage();
 }
 
-class _SamplePage extends State<SamplePage> {
+class _ShopPage extends State<ShopPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
