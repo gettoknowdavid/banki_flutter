@@ -6,7 +6,7 @@
                     "id": "1",
                     "attributes": {
                         "name": "Womb Chair",
-                        "description": "Spectacular and exquisite are the true definitions of this timeless Womb Chair by Knoll Saarinen.",
+                        "description": "description",
                         "price": 499999,
                         "rating": 4,
                         "author": "Knoll Saarinen",
@@ -14,15 +14,15 @@
                             "data": {
                                 "id": "3",
                                 "attributes": {
-                                    "name": "Chairs",
-                                    "slug": "chairs"
+                                    "name": "Chairs"
                                 }
                             }
                         },
                         "featuredImage": {
                             "data": {
+                                "id": "42",
                                 "attributes": {
-                                    "url": "https://res.cloudinary.com/tintday/image/upload/v1643227074/Knoll_Saarinen_Womb_Chair_G03_watermarked_2k_0a3438e908.png"
+                                    "url": "url"
                                 }
                             }
                         },
@@ -31,19 +31,19 @@
                                 {
                                     "id": "42",
                                     "attributes": {
-                                        "url": "https://res.cloudinary.com/tintday/image/upload/v1643227073/Knoll_Saarinen_Womb_Chair_G01_watermarked_2k_cfdabdb75f.png"
+                                        "url": "url"
                                     }
                                 },
                                 {
                                     "id": "46",
                                     "attributes": {
-                                        "url": "https://res.cloudinary.com/tintday/image/upload/v1643227074/Knoll_Saarinen_Womb_Chair_G12_watermarked_2k_978bb58874.png"
+                                        "url": "url"
                                     }
                                 },
                                 {
                                     "id": "44",
                                     "attributes": {
-                                        "url": "https://res.cloudinary.com/tintday/image/upload/v1643227074/Knoll_Saarinen_Womb_Chair_G03_watermarked_2k_0a3438e908.png"
+                                        "url": "url"
                                     }
                                 }
                             ]

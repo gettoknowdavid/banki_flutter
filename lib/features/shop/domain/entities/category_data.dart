@@ -4,7 +4,7 @@ import 'category_attributes.dart';
 
 class CategoryData extends Equatable {
   const CategoryData({required this.id, required this.attributes});
-  final int id;
+  final String id;
   final CategoryAttributes attributes;
 
   @override

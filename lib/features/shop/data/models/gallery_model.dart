@@ -1,29 +1,21 @@
-import 'package:banki_flutter/features/shop/data/models/strapi_image_attributes_model.dart';
-import 'package:banki_flutter/features/shop/data/models/strapi_image_data_model.dart';
-import 'package:banki_flutter/features/shop/data/models/strapi_image_model.dart';
+import 'package:banki_flutter/features/shop/data/models/product_image_data_model.dart';
 import 'package:banki_flutter/features/shop/domain/entities/gallery.dart';
+import 'package:json_annotation/json_annotation.dart';
 
+part 'gallery_model.g.dart';
+
+@JsonSerializable(explicitToJson: true)
 class GalleryModel extends Gallery {
   const GalleryModel({
-    required List<StrapiImageDataModel> data,
+    required List<ProductImageDataModel> data,
   }) : super(data: data);
 
-  factory GalleryModel.fromJson(Map<String, dynamic> json) {
-    return GalleryModel(
-      data: List<StrapiImageDataModel>.from(
-          json['data'].map((e) => StrapiImageDataModel.fromJson(e)).toList()),
-    );
-  }
+  @override
+  List<ProductImageDataModel> get data =>
+      super.data as List<ProductImageDataModel>;
 
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> json = <String, dynamic>{};
+  factory GalleryModel.fromJson(Map<String, dynamic> json) =>
+      _$GalleryModelFromJson(json);
 
-    json['data'] = data.map(
-      (e) => StrapiImageDataModel(
-        id: e.id,
-        attributes: StrapiImageAttributesModel(url: e.attributes.url),
-      ).toJson(),
-    );
-    return json;
-  }
+  Map<String, dynamic> toJson() => _$GalleryModelToJson(this);
 }

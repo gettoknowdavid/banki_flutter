@@ -1,21 +1,18 @@
-import 'package:banki_flutter/features/shop/data/models/category_attributes_model.dart';
 import 'package:banki_flutter/features/shop/data/models/category_data_model.dart';
 import 'package:banki_flutter/features/shop/domain/entities/category.dart';
+import 'package:json_annotation/json_annotation.dart';
 
+part 'category_model.g.dart';
+
+@JsonSerializable(explicitToJson: true)
 class CategoryModel extends Category {
   const CategoryModel({required CategoryDataModel data}) : super(data: data);
 
-  factory CategoryModel.fromJson(Map<String, dynamic> json) {
-    return CategoryModel(data: CategoryDataModel.fromJson(json['data']));
-  }
+  @override
+  CategoryDataModel get data => super.data as CategoryDataModel;
 
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> json = <String, dynamic>{};
-    final model = CategoryDataModel(
-      id: data.id,
-      attributes: CategoryAttributesModel(name: data.attributes.name),
-    );
-    json['data'] = model.toJson();
-    return json;
-  }
+  factory CategoryModel.fromJson(Map<String, dynamic> json) =>
+      _$CategoryModelFromJson(json);
+
+  Map<String, dynamic> toJson() => _$CategoryModelToJson(this);
 }

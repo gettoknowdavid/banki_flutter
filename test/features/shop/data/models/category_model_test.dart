@@ -11,7 +11,7 @@ import '../../../../fixtures/fixture_reader.dart';
 void main() {
   const categoryModel = CategoryModel(
     data: CategoryDataModel(
-      id: 3,
+      id: "3",
       attributes: CategoryAttributesModel(name: 'Chairs'),
     ),
   );
@@ -42,7 +42,12 @@ void main() {
       () async {
         final result = categoryModel.toJson();
 
-        expect(result, {"data": {"id": "3", "attributes": {"name": "Chairs"}}});
+        expect(result, {
+          "data": {
+            "id": "3",
+            "attributes": {"name": "Chairs"}
+          }
+        });
       },
     );
   });

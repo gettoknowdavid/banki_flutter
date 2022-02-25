@@ -1,8 +1,8 @@
 import 'dart:convert';
 
 import 'package:banki_flutter/features/shop/data/models/gallery_model.dart';
-import 'package:banki_flutter/features/shop/data/models/strapi_image_attributes_model.dart';
-import 'package:banki_flutter/features/shop/data/models/strapi_image_data_model.dart';
+import 'package:banki_flutter/features/shop/data/models/product_image_attributes_model.dart';
+import 'package:banki_flutter/features/shop/data/models/product_image_data_model.dart';
 import 'package:banki_flutter/features/shop/domain/entities/gallery.dart';
 import 'package:flutter_test/flutter_test.dart';
 
@@ -10,10 +10,10 @@ import '../../../../fixtures/fixture_reader.dart';
 
 void main() {
   const galleryModel = GalleryModel(
-    data: <StrapiImageDataModel>[
-      StrapiImageDataModel(
-        id: 43,
-        attributes: StrapiImageAttributesModel(url: 'url'),
+    data: <ProductImageDataModel>[
+      ProductImageDataModel(
+        id: "43",
+        attributes: ProductImageAttributesModel(url: 'url'),
       ),
     ],
   );

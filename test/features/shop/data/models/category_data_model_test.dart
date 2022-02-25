@@ -9,17 +9,14 @@ import '../../../../fixtures/fixture_reader.dart';
 
 void main() {
   const categoryDataModel = CategoryDataModel(
-    id: 3,
+    id: "3",
     attributes: CategoryAttributesModel(name: 'Chairs'),
   );
 
   test(
     'should be a sub class of the CategoryData entity',
     () async {
-      expect(
-        categoryDataModel,
-        isA<CategoryData>(),
-      );
+      expect(categoryDataModel, isA<CategoryData>());
     },
   );
 
@@ -42,7 +39,10 @@ void main() {
       () async {
         final result = categoryDataModel.toJson();
 
-        expect(result, {"id": "3", "attributes": {"name": "Chairs"}});
+        expect(result, {
+          "id": "3",
+          "attributes": {"name": "Chairs"}
+        });
       },
     );
   });

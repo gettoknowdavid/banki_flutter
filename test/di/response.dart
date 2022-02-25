@@ -3,19 +3,33 @@ import 'package:banki_flutter/features/shop/data/models/category_data_model.dart
 import 'package:banki_flutter/features/shop/data/models/category_model.dart';
 import 'package:banki_flutter/features/shop/data/models/gallery_model.dart';
 import 'package:banki_flutter/features/shop/data/models/product_attributes_model.dart';
-import 'package:banki_flutter/features/shop/data/models/strapi_image_attributes_model.dart';
-import 'package:banki_flutter/features/shop/data/models/strapi_image_data_model.dart';
-import 'package:banki_flutter/features/shop/data/models/strapi_image_model.dart';
+import 'package:banki_flutter/features/shop/data/models/product_datum_model.dart';
+import 'package:banki_flutter/features/shop/data/models/product_image_attributes_model.dart';
+import 'package:banki_flutter/features/shop/data/models/product_image_data_model.dart';
+import 'package:banki_flutter/features/shop/data/models/product_image_model.dart';
+import 'package:banki_flutter/features/shop/data/models/product_response_data_model.dart';
+import 'package:banki_flutter/features/shop/data/models/product_response_model.dart';
+import 'package:banki_flutter/features/shop/data/models/products_model.dart';
 import 'package:banki_flutter/features/shop/domain/entities/category.dart';
 import 'package:banki_flutter/features/shop/domain/entities/category_attributes.dart';
 import 'package:banki_flutter/features/shop/domain/entities/category_data.dart';
 import 'package:banki_flutter/features/shop/domain/entities/product.dart';
 import 'package:banki_flutter/features/shop/domain/entities/product_attributes.dart';
-import 'package:banki_flutter/features/shop/domain/entities/product_data.dart';
-import 'package:banki_flutter/features/shop/domain/entities/strapi_image.dart';
-import 'package:banki_flutter/features/shop/domain/entities/strapi_image_attributes.dart';
-import 'package:banki_flutter/features/shop/domain/entities/strapi_image_data.dart';
 import 'package:banki_flutter/features/shop/domain/entities/gallery.dart';
+import 'package:banki_flutter/features/shop/domain/entities/product_datum.dart';
+import 'package:banki_flutter/features/shop/domain/entities/product_image.dart';
+import 'package:banki_flutter/features/shop/domain/entities/product_image_attributes.dart';
+import 'package:banki_flutter/features/shop/domain/entities/product_image_data.dart';
+
+const tResponseModel = ProductResponseModel(
+  data: ProductResponseDataModel(
+    products: ProductsModel(data: allProductDatumModel),
+  ),
+);
+
+const allProductDatumModel = <ProductDatumModel>[
+  ProductDatumModel(id: "1", attributes: productAttributesModel),
+];
 
 const productAttributesModel = ProductAttributesModel(
   name: "Womb Chair",
@@ -25,29 +39,29 @@ const productAttributesModel = ProductAttributesModel(
   author: "Knoll Saarinen",
   category: CategoryModel(
     data: CategoryDataModel(
-      id: 3,
+      id: "3",
       attributes: CategoryAttributesModel(name: 'Chairs'),
     ),
   ),
-  featuredImage: StrapiImageModel(
-    data: StrapiImageDataModel(
-      id: 42,
-      attributes: StrapiImageAttributesModel(url: "url"),
+  featuredImage: ProductImageModel(
+    data: ProductImageDataModel(
+      id: "42",
+      attributes: ProductImageAttributesModel(url: "url"),
     ),
   ),
   gallery: GalleryModel(
-    data: <StrapiImageDataModel>[
-      StrapiImageDataModel(
-        id: 42,
-        attributes: StrapiImageAttributesModel(url: "url"),
+    data: <ProductImageDataModel>[
+      ProductImageDataModel(
+        id: "42",
+        attributes: ProductImageAttributesModel(url: "url"),
       ),
-      StrapiImageDataModel(
-        id: 46,
-        attributes: StrapiImageAttributesModel(url: "url"),
+      ProductImageDataModel(
+        id: "46",
+        attributes: ProductImageAttributesModel(url: "url"),
       ),
-      StrapiImageDataModel(
-        id: 44,
-        attributes: StrapiImageAttributesModel(url: "url"),
+      ProductImageDataModel(
+        id: "44",
+        attributes: ProductImageAttributesModel(url: "url"),
       ),
     ],
   ),
@@ -55,8 +69,8 @@ const productAttributesModel = ProductAttributesModel(
 
 const List<Product> allTestProducts = <Product>[
   Product(
-    data: ProductData(
-      id: 1,
+    data: ProductDatum(
+      id: "1",
       attributes: ProductAttributes(
         name: "Womb Chair",
         description:
@@ -66,41 +80,29 @@ const List<Product> allTestProducts = <Product>[
         author: "Knoll Saarinen",
         category: Category(
           data: CategoryData(
-            id: 3,
+            id: "3",
             attributes: CategoryAttributes(name: 'Chairs'),
           ),
         ),
-        featuredImage: StrapiImage(
-          data: StrapiImageData(
-            id: 42,
-            attributes: StrapiImageAttributes(
-              url:
-                  "https://res.cloudinary.com/tintday/image/upload/v1643227074/Knoll_Saarinen_Womb_Chair_G03_watermarked_2k_0a3438e908.png",
-            ),
+        featuredImage: ProductImage(
+          data: ProductImageData(
+            id: "42",
+            attributes: ProductImageAttributes(url: "url"),
           ),
         ),
         gallery: Gallery(
           data: [
-            StrapiImageData(
-              id: 42,
-              attributes: StrapiImageAttributes(
-                url:
-                    "https://res.cloudinary.com/tintday/image/upload/v1643227074/Knoll_Saarinen_Womb_Chair_G03_watermarked_2k_0a3438e908.png",
-              ),
+            ProductImageData(
+              id: "42",
+              attributes: ProductImageAttributes(url: "url"),
             ),
-            StrapiImageData(
-              id: 46,
-              attributes: StrapiImageAttributes(
-                url:
-                    "https://res.cloudinary.com/tintday/image/upload/v1643227074/Knoll_Saarinen_Womb_Chair_G12_watermarked_2k_978bb58874.png",
-              ),
+            ProductImageData(
+              id: "46",
+              attributes: ProductImageAttributes(url: "url"),
             ),
-            StrapiImageData(
-              id: 44,
-              attributes: StrapiImageAttributes(
-                url:
-                    "https://res.cloudinary.com/tintday/image/upload/v1643227074/Knoll_Saarinen_Womb_Chair_G03_watermarked_2k_0a3438e908.png",
-              ),
+            ProductImageData(
+              id: "44",
+              attributes: ProductImageAttributes(url: "url"),
             ),
           ],
         ),
@@ -108,3 +110,21 @@ const List<Product> allTestProducts = <Product>[
     ),
   ),
 ];
+
+// const List<ProductModel> allTestModels = <ProductModel>[
+//   ProductModel(
+//     data: ProductDatumModel(
+//       id: "1",
+//       attributes: productAttributesModel,
+//     ),
+//   ),
+// ];
+
+
+// const ProductResponse tProductResponse = ProductResponse(
+//   products: allTestProducts,
+// );
+
+// const ProductResponseModel tProductResponseModel = ProductResponseModel(
+//   products: allTestModels,
+// );

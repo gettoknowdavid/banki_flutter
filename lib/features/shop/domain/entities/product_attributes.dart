@@ -1,5 +1,5 @@
 import 'package:banki_flutter/features/shop/domain/entities/category.dart';
-import 'package:banki_flutter/features/shop/domain/entities/strapi_image.dart';
+import 'package:banki_flutter/features/shop/domain/entities/product_image.dart';
 import 'package:banki_flutter/features/shop/domain/entities/gallery.dart';
 import 'package:equatable/equatable.dart';
 
@@ -17,11 +17,11 @@ class ProductAttributes extends Equatable {
 
   final String name;
   final String description;
-  final double price;
-  final double rating;
+  final num price;
+  final num rating;
   final String author;
   final Category category;
-  final StrapiImage featuredImage;
+  final ProductImage featuredImage;
   final Gallery gallery;
 
   @override

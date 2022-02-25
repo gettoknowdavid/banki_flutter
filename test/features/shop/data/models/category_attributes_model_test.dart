@@ -8,7 +8,6 @@ import '../../../../fixtures/fixture_reader.dart';
 
 void main() {
   const categoryAttributesModel = CategoryAttributesModel(name: 'Chairs');
-
   test(
     'should be a sub class of the CategoryAttributes entity',
     () async {
