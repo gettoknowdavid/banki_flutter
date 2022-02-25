@@ -1,3 +1,4 @@
+import 'package:banki_flutter/features/shop/data/models/product_response_model.dart';
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 
